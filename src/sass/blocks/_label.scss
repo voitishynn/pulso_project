@@ -1,0 +1,40 @@
+.label{
+    min-height: 470px;
+    padding:70px 0 79px 0;
+    &_header{
+        color: #0d0d0d;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+    }
+    &_wrapper{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 65px;
+    }
+    &_item{
+        width:239px;
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    &_subheader{
+        color: #0d0d0d;
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 38px;
+        text-align: center;
+    }
+    &_descr{
+        color: #0d0d0d;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 26px;
+        text-align: center;
+        a{
+            color: #ff0000;
+            text-decoration: underline;
+        }
+    }
+}
