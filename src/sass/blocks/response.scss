@@ -1,0 +1,47 @@
+.response{
+    .title{
+        margin-bottom: 70px;
+    }
+    padding-bottom: 71px;
+    &_item{
+        display: flex;
+        
+        hr{
+            border-bottom:none;
+            margin-top: 48px;
+            margin-bottom: 53px;
+            color: #f6f6f6;
+            width: 650px;
+            } 
+      
+    }
+    &_text{
+        display: flex;
+        flex-direction: column;
+       padding-left: 25px;
+        
+        
+    }
+    &_header{
+        font-size: 18px;
+        font-weight: 700;
+        text-align: left;
+        color: #0d0d0d;
+    }
+    &_subheader{
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: left;
+        color: #646464;
+    }
+    &_descr{
+        margin-top: 19px;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: left;
+        color: #0d0d0d;
+        width: 650px;
+    }
+       
+}
