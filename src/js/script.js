@@ -40,5 +40,52 @@ $(document).ready(function(){
 
   toggleSlide('.catalog-item_link');
   toggleSlide('.catalog-item_back');
+  //Modal
 
+
+
+  $('[data-modal=consultation]').on('click',function(){
+    $('.overlay,#consultation').fadeIn('slow');
+  });
+  $('.modal_close').on('click', function(){
+    $('.overlay,#consultation,#thanks,#order').fadeOut('slow')
+  });
+  
+
+  $('.button_mini').each(function(i){
+    $(this).on('click',function(){
+      $('#order .modal_descr').text($('.catalog-item_subtitle').eq(i).text());
+      $('.overlay,#order').fadeIn('slow');
+    });
+  });
+
+ 
+  
+
+
+  function valideForms(form){
+    $(form).validate({
+      rules: {
+        name:"required",
+        phone:"required",
+        email: {
+          required:true,
+          email: true
+        }
+      },
+      messages: {
+        name: "Please specify your name",
+        phone: "Please enter your phone",
+        email: {
+          required: "We need your email address ",
+          email: "Your email address must be in the format of name@domain.com"
+        }
+      }
+    });
+  };
+  valideForms('#consultation-form');
+  valideForms('#consultation form');
+  valideForms('#order form');
+  
+  $('input[name=phone]').mask("+38(99) 999-9999")
 });

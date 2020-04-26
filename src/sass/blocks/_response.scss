@@ -5,14 +5,15 @@
     padding-bottom: 71px;
     &_item{
         display: flex;
+        margin-top: 48px;
         
-        hr{
+        /* hr{
             border-bottom:none;
             margin-top: 48px;
             margin-bottom: 53px;
             color: #f6f6f6;
             width: 650px;
-            } 
+            }  */
       
     }
     &_text{
