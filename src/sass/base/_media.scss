@@ -168,6 +168,24 @@
     
 }
 @media (max-width: 767px){
+    .header{
+        .button{
+            font-size: 12px;
+            width: 10px;
+
+        }
+    }
+    .pageup{
+        display: none;
+        position: fixed;
+        bottom:40px;
+        right: 40px;
+        width: 40px;
+        height: 40px;
+        img{
+            width: 100%;
+        }
+    }
     .promo{
         height: 490px;
         background-size:160% 100%;
@@ -190,8 +208,9 @@
         }
         .button_main{
             margin-top: 25px;
-            width:230px;
+            width:220px;
             height: 43px;
+            font-size: 14px;
         }
     }
     .header{
@@ -222,20 +241,71 @@
             }
         }
     }
+    
     .label{
-        display: none;
+        &_wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+        }
         padding-top: 50px;
         &_item{
-            width: 180px;
+            width: 250px;
+            margin-top: 30px;
         }
         &_subheader{
             font-size: 16px;
         }
         &_descr{
-            font-size: 13px;
-            width: 180px;
+            font-size: 15px;
+            width: 250px;
+            text-align: center;
         }
     } 
+    .carousel{
+       display: none;
+    }
+    .response{
+        
+    }
+    .catalog{
+        &_tabs{
+            flex-direction: row;
+            margin-top: 10px;
+            width: 560px;
+            padding-left: 15px;
+            li{
+                font-size: 15px;
+            }
+        }
+        &_tab{
+            margin-top: 20px;
+        }
+        &-item{
+            width: 250px;
+            height: 500px;
+            &_img{
+                height: 180px;
+            }
+            &_wrapper{
+                height: 350px;
+            }
+            &_price{
+                font-size: 19px;
+            }
+            &_list{
+                li{
+                    font-size: 12px;
+                }
+            }
+        }
+        .button_mini{
+            width: 100px;
+            height: 35px;
+            font-size:13px ;
+        }
+    }
     
     .consultation{
         .container{
@@ -255,9 +325,7 @@
         margin-top: 40px;
     }
    
-    .carousel{
-       display: none;
-    }
+    
     .response{
         &_descr{
             font-size: 13px;

@@ -16,17 +16,22 @@ $(document).ready(function(){
         {
           breakpoint: 480,
           settings: {
-           
+            arrows: false,
           }
         }
       ]
   });
+
+
+
   
   $('ul.catalog_tabs').on('click', 'li:not(.catalog_tab_active)', function() {
       $(this)
         .addClass('catalog_tab_active').siblings().removeClass('catalog_tab_active')
         .closest('div.container').find('div.catalog_content').removeClass('catalog_content_active').eq($(this).index()).addClass('catalog_content_active');
   });
+
+
 
   function toggleSlide(item){
     $(item).each(function(i){
@@ -44,12 +49,13 @@ $(document).ready(function(){
 
 
 
+
   $('[data-modal=consultation]').on('click',function(){
     $('.overlay,#consultation').fadeIn('slow');
   });
   $('.modal_close').on('click', function(){
     $('.overlay,#consultation,#thanks,#order').fadeOut('slow')
-  });
+  }); 
   
 
   $('.button_mini').each(function(i){
@@ -87,5 +93,40 @@ $(document).ready(function(){
   valideForms('#consultation form');
   valideForms('#order form');
   
-  $('input[name=phone]').mask("+38(99) 999-9999")
+  $('input[name=phone]').mask("+38(99) 999-9999");
+
+  $('form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+          type: "POST",
+          url: "mailer/smart.php",
+          data: $(this).serialize()
+      }).done(function() {
+        $(this).find("input").val("");
+        $('#consultation, #order').fadeOut();
+        $('.overlay, #thanks').fadeIn('slow');
+
+        $('form').trigger('reset');
+      });
+      return false;
+  });
+
+  //Smooth scroll and pageup
+
+  $(window).scroll(function(){
+    if ($(this).scrollTop() >  1600){
+      $('.pageup').fadeIn();
+    } else{
+      $('.pageup').fadeOut();
+    }
+  });
+
+  
+    $("a[href^='#']").click(function(){
+            const _href = $(this).attr("href");
+            $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+            return false;
+   
+      });
+      new WOW().init();
 });
